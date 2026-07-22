@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Cursor from './components/Cursor';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Journey from './components/Journey';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Achievements from './components/Achievements';
-import Certifications from './components/Certifications';
-import Experience from './components/Experience';
-import Services from './components/Services';
-import TechStack from './components/TechStack';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
+
+// Lazy load below-the-fold components to reduce initial JS payload
+const About = lazy(() => import('./components/About'));
+const Journey = lazy(() => import('./components/Journey'));
+const Skills = lazy(() => import('./components/Skills'));
+const Projects = lazy(() => import('./components/Projects'));
+const Achievements = lazy(() => import('./components/Achievements'));
+const Certifications = lazy(() => import('./components/Certifications'));
+const Experience = lazy(() => import('./components/Experience'));
+const Services = lazy(() => import('./components/Services'));
+const TechStack = lazy(() => import('./components/TechStack'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -32,18 +34,20 @@ export default function App() {
           <Navbar />
           <main>
             <Hero />
-            <About />
-            <Journey />
-            <Skills />
-            <Projects />
-            <Achievements />
-            <Certifications />
-            <Experience />
-            <Services />
-            <TechStack />
-            <Contact />
+            <Suspense fallback={<div className="min-h-[200px]" />}>
+              <About />
+              <Journey />
+              <Skills />
+              <Projects />
+              <Achievements />
+              <Certifications />
+              <Experience />
+              <Services />
+              <TechStack />
+              <Contact />
+              <Footer />
+            </Suspense>
           </main>
-          <Footer />
           <ThemeToggle />
         </div>
       )}
