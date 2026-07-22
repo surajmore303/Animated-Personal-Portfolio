@@ -115,7 +115,7 @@ export default function Hero() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="me noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -3 }}
                   className="w-10 h-10 glass rounded-full flex items-center justify-center text-white/60 hover:text-cyan-400 hover:border-cyan-500/40 border border-white/10 transition-colors"
                   aria-label={s.label}

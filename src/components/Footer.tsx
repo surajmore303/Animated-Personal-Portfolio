@@ -25,7 +25,7 @@ export default function Footer() {
                   key={i}
                   href={s.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="me noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
                   className="w-9 h-9 glass rounded-full flex items-center justify-center text-white/50 hover:text-cyan-400 border border-white/10 hover:border-cyan-500/30 transition-colors"
                 >
