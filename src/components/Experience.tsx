@@ -15,7 +15,7 @@ export default function Experience() {
             <Reveal key={exp.role} delay={i * 0.1}>
               <motion.div
                 whileHover={{ x: 6 }}
-                className="glass rounded-2xl p-6 border border-white/5 hover:border-cyan-500/20 transition-all flex gap-5"
+                className="glass rounded-2xl p-4 sm:p-6 border border-white/5 hover:border-cyan-500/20 transition-all flex flex-col sm:flex-row gap-4 sm:gap-5"
               >
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-600/20 border border-cyan-500/20 flex items-center justify-center text-2xl flex-shrink-0">
                   {exp.icon}

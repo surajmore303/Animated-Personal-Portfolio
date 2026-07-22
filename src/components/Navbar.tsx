@@ -38,7 +38,7 @@ export default function Navbar() {
         scrolled ? 'glass border-b border-white/5 py-3' : 'py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[1fr_auto_1fr] items-center">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}

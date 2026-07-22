@@ -46,12 +46,12 @@ export default function Skills() {
 
         {/* Category Filter */}
         <Reveal>
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex overflow-x-auto no-scrollbar py-2 px-1 max-w-full justify-start md:justify-center gap-2 mb-10 pb-2 flex-nowrap md:flex-wrap">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all shrink-0 ${
                   active === cat
                     ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white'
                     : 'glass text-white/50 hover:text-white border border-white/10'
@@ -63,7 +63,7 @@ export default function Skills() {
           </div>
         </Reveal>
 
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filtered.map((skill, i) => (
             <Reveal key={skill.name} delay={i * 0.04}>
               <SkillCard skill={skill} inView={inView} />

@@ -55,9 +55,9 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${item.color}20`, color: item.color }}>
                     {item.icon}
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs text-white/40">{item.label}</div>
-                    <div className="text-sm font-medium text-white/80 group-hover:text-cyan-400 transition-colors">{item.value}</div>
+                    <div className="text-sm font-medium text-white/80 group-hover:text-cyan-400 transition-colors break-all">{item.value}</div>
                   </div>
                 </motion.a>
               ))}

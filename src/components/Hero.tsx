@@ -38,13 +38,13 @@ export default function Hero() {
               Available for opportunities
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
               <span className="text-white">Hi, I'm</span>
               <br />
               <span className="gradient-text">Suraj More</span>
             </h1>
 
-            <div className="text-xl md:text-2xl font-semibold text-white/80 mb-6 h-10">
+            <div className="text-lg sm:text-xl md:text-2xl font-semibold text-white/80 mb-6 min-h-[2.5rem] flex items-center">
               <TypeAnimation
                 sequence={[
                   'Computer Engineering Student', 2000,
@@ -131,15 +131,13 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-end lg:justify-end w-full"
-
+            className="flex justify-center lg:justify-end w-full overflow-hidden p-2"
           >
 
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative flex items-center justify-center"
-              style={{ width: 800, height: 470 }}
+              className="relative flex items-center justify-center w-full max-w-[320px] sm:max-w-[480px] lg:max-w-[680px] aspect-[4/3] sm:aspect-[16/10] mx-auto"
             >
               {/* Outermost slow-spin gradient ring */}
               <motion.div
@@ -147,7 +145,8 @@ export default function Hero() {
                 transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
                 className="absolute rounded-3xl"
                 style={{
-                  width: 450, height: 450,
+                  width: 'clamp(160px, 70vw, 450px)',
+                  height: 'clamp(160px, 70vw, 450px)',
                   background: 'conic-gradient(from 0deg, #00d4ff, #7c3aed, #06b6d4, transparent, #00d4ff)',
                   padding: 2,
                   borderRadius: 32,
@@ -162,7 +161,8 @@ export default function Hero() {
                 transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                 className="absolute"
                 style={{
-                  width: 366, height: 406,
+                  width: 'clamp(140px, 60vw, 366px)',
+                  height: 'clamp(150px, 62vw, 406px)',
                   borderRadius: 28,
                   border: '1px dashed rgba(0,212,255,0.25)',
                 }}
@@ -172,7 +172,8 @@ export default function Hero() {
               <div
                 className="absolute"
                 style={{
-                  width: 340, height: 380,
+                  width: 'clamp(130px, 50vw, 340px)',
+                  height: 'clamp(140px, 52vw, 380px)',
                   borderRadius: 26,
                   background: 'radial-gradient(ellipse at 50% 30%, rgba(0,212,255,0.18) 0%, rgba(124,58,237,0.12) 60%, transparent 100%)',
                   filter: 'blur(18px)',
@@ -181,9 +182,8 @@ export default function Hero() {
 
               {/* Main image card */}
               <div
-                className="relative overflow-hidden"
+                className="relative overflow-hidden w-full h-full"
                 style={{
-                  width: 1080, height: 560,
                   borderRadius: 30,
                   border: '1.5px solid rgba(0,212,255,0.35)',
                   boxShadow: '0 0 40px rgba(0,212,255,0.2), 0 0 80px rgba(124,58,237,0.15), inset 0 0 30px rgba(0,212,255,0.05)',
@@ -194,7 +194,7 @@ export default function Hero() {
                   src={profileImg}
                   alt="Suraj More"
                   style={{
-                    width: '1280px',
+                    width: '100%',
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center top',
@@ -220,13 +220,13 @@ export default function Hero() {
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full"
+                  className="absolute rounded-full pointer-events-none"
                   style={{
                     width: i % 2 === 0 ? 6 : 4,
                     height: i % 2 === 0 ? 6 : 4,
                     background: i % 3 === 0 ? '#00d4ff' : i % 3 === 1 ? '#7c3aed' : '#06b6d4',
                     top: `${15 + i * 13}%`,
-                    left: i % 2 === 0 ? '-8%' : '105%',
+                    left: i % 2 === 0 ? '0%' : '96%',
                     boxShadow: `0 0 8px ${i % 3 === 0 ? '#00d4ff' : '#7c3aed'}`,
                   }}
                   animate={{ y: [0, -10, 0], opacity: [0.6, 1, 0.6] }}
