@@ -65,6 +65,7 @@ export default function Navbar() {
         <button
           className="lg:hidden text-white/80 hover:text-primary transition-colors justify-self-end"
           onClick={() => setOpen(!open)}
+          aria-label="Toggle Navigation Menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>

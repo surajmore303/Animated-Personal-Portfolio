@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import profileImg from '../assets/image.png';
+import profileImg from '../assets/image.webp';
 import { TypeAnimation } from 'react-type-animation';
 import { GitFork, Link, Mail, ArrowDown, Download, ExternalLink } from 'lucide-react';
 
@@ -193,6 +193,8 @@ export default function Hero() {
                 <img
                   src={profileImg}
                   alt="Suraj More"
+                  decoding="async"
+                  fetchPriority="high"
                   style={{
                     width: '100%',
                     height: '100%',
