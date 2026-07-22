@@ -51,6 +51,7 @@ export default function Contact() {
                   href={item.href}
                   target="_blank"
                   rel="me noopener noreferrer"
+                  aria-label={item.label}
                   whileHover={{ x: 6 }}
                   className="flex items-center gap-4 glass rounded-xl p-4 border border-white/5 hover:border-white/10 transition-all group"
                 >
