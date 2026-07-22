@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Award } from 'lucide-react';
 import { certifications } from '../data/portfolio';
 import SectionHeader from './SectionHeader';
 import Reveal from './Reveal';

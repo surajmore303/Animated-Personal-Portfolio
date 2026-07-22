@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GitFork, Link, Mail, ExternalLink, Heart, ArrowUp } from 'lucide-react';
+import { GitFork, Link, Mail, Heart, ArrowUp } from 'lucide-react';
 import { navLinks } from '../data/portfolio';
 
 export default function Footer() {
